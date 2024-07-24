@@ -140,7 +140,8 @@ async function main_PublicacionTOCTOC(xObjPublicacion) {
 
         }
 
-        let collecErrorTocToc = await responsetoctocErrorModel.find({},{idintento:1});
+        let collecErrorTocToc = await responsetoctocErrorModel.find({idintento:1});
+        console.log('collecErrorTocToc::',collecErrorTocToc);
 
         for(let row in collecErrorTocToc) {
 
