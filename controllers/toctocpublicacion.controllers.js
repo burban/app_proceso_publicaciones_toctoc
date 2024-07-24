@@ -19,7 +19,7 @@ const enviarMailCtrl = require('../controllers/enviamail.controllers');
 
 try {
 
-    mongoose.connect(`mongodb://MQVSDB01:27017/mq_publicaciones`); 
+    mongoose.connect(`mongodb://192.168.1.26:27017/mq_publicaciones`); 
 
 } catch (error) {
     console.log('error:: ',error);

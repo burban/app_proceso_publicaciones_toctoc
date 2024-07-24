@@ -6,7 +6,6 @@ const publicacionControllers = require('./controllers/publicacion.controllers');
 const tiposControllers = require('./controllers/tipos.controllers');
 const toctocPublicacionControllers = require('./controllers/toctocpublicacion.controllers');
 
-
 try {
 
     mongoose.connect(`mongodb://192.168.1.26:27017/mq_publicaciones`);
@@ -14,10 +13,6 @@ try {
 } catch (error) {
     console.log('tipos.controllers error:: ',error);
 }
-
-
-
-
 
 async function main() {
 

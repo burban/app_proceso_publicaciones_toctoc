@@ -7,7 +7,7 @@ const axios = require('axios');
 
 try {
 
-        mongoose.connect(`mongodb://MQVSDB01:27017/mq_publicaciones`); 
+        mongoose.connect(`mongodb://192.168.1.26:27017/mq_publicaciones`); 
 
 } catch (error) {
     console.log('error:: ',error);
@@ -25,8 +25,9 @@ async function getPublicacionsFromHost() {
             method: 'get',
             maxBodyLength: Infinity,
             url: 'https://www.mq.cl/get',
+            timeout: 50000,
             headers: { }
-            };
+        };
             
         let ax = await axios(config)
         .then(async function (response) {
