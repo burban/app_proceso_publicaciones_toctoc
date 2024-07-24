@@ -140,12 +140,12 @@ async function main_PublicacionTOCTOC(xObjPublicacion) {
 
         }
 
-        let collecErrorTocToc = await responsetoctocErrorModel.find({},{objpublicacion:1});
+        let collecErrorTocToc = await responsetoctocErrorModel.find({},{idintento:1});
 
         for(let row in collecErrorTocToc) {
 
             let idpublic = collecErrorTocToc[row].objpublicacion[0]["integratorPropertyID"];
-            let titulo =  collecErrorTocToc[row].objpublicacion[0]["title"];
+            let titulo =  collecErrorTocToc[row].objpublicacion[0]["title"];            
 
             let respTocTocTwo = await pushPublicacion_TocToc(collecErrorTocToc[row].objpublicacion);
             console.log('respTocTocTwo::' , respTocTocTwo);            
