@@ -145,8 +145,17 @@ async function main_PublicacionTOCTOC(xObjPublicacion) {
 
         for(let row in collecErrorTocToc) {
 
-            let idpublic = collecErrorTocToc[row].objpublicacion[0]["integratorPropertyID"];
-            let titulo =  collecErrorTocToc[row].objpublicacion[0]["title"];            
+            let idpublic = '';
+            let titulo = '';
+            if(collecErrorTocToc[row].objpublicacion[0].length > 0)
+            {
+                idpublic = collecErrorTocToc[row].objpublicacion[0]["integratorPropertyID"];
+                titulo = collecErrorTocToc[row].objpublicacion[0]["title"];
+            }
+            else
+            {
+                idpublic = collecErrorTocToc[row].idpublicacion;
+            }
 
             let respTocTocTwo = await pushPublicacion_TocToc(collecErrorTocToc[row].objpublicacion);
             console.log('respTocTocTwo::' , respTocTocTwo);            
