@@ -90,7 +90,7 @@ async function sendMail(attach,xsuccess,xfails) {
 
             return {
                 status : true,
-                message : 'ok'
+                message : 'Correo enviado !!'
             }
         }
         else

@@ -141,13 +141,15 @@ async function main_PublicacionTOCTOC(xObjPublicacion) {
         }
 
         let collecErrorTocToc = await responsetoctocErrorModel.find({idintento:1});
-        console.log('collecErrorTocToc::',collecErrorTocToc);
 
         for(let row in collecErrorTocToc) {
 
             let idpublic = '';
             let titulo = '';
-            if(collecErrorTocToc[row].objpublicacion[0].length > 0)
+
+            console.log('object', collecErrorTocToc[row]);
+
+            if(collecErrorTocToc[row].objpublicacion.length > 0)
             {
                 idpublic = collecErrorTocToc[row].objpublicacion[0]["integratorPropertyID"];
                 titulo = collecErrorTocToc[row].objpublicacion[0]["title"];
@@ -203,7 +205,10 @@ async function main_PublicacionTOCTOC(xObjPublicacion) {
         //console.log(collecErrorTocToc[0].objpublicacion);
         // console.log('collecErrorTocToc:',collecErrorTocToc);
 
-        await enviarMailCtrl.sendMail(con_erros,num_success,num_fails);
+        //Enviamos correo de Status...
+        let rspMESG = await enviarMailCtrl.sendMail(con_erros,num_success,num_fails);        
+        console.log(rspMESG);
+        
 
         return {
             status : true,

@@ -5,6 +5,6 @@ module.exports = {
     portmail : '25',
     usermail: 'tecnologia@mq.cl',
     passmail:'Mq123456.',
-    mailto:'soporte@mq.cl',
+    mailto:'mtoro@mq.cl',
     mailcc:'mtoro@mq.cl'
 }
